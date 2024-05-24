@@ -27,6 +27,7 @@
     color: black;
     display: flex;
     margin: 5%;
+    font-weight: 500;
   
 }
 .foot2{
@@ -40,8 +41,10 @@
     /* border:solid red; */
     font-size: 14pt;
     text-decoration: none;
-    color: purple;
+    color:rgb(19, 47, 173);
     margin: 5%;
+    text-decoration: underline;
+  
 }
 .footerHeader{
     margin-top: 2%;

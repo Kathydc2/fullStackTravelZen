@@ -1,0 +1,21 @@
+.registerForm{
+    /* border: solid black; */
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    padding: 5.6%;
+}
+
+.registerImg{
+    /* border:solid red; */
+    height:42vh;
+    width:auto;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+}
+
+.login{
+    margin-left: 5em;
+    margin-top: 2em;
+   
+}

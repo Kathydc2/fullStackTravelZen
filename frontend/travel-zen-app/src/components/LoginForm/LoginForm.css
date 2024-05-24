@@ -1,0 +1,78 @@
+.loginForm{
+    /* border: solid black; */
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    padding: 5.6%;
+
+
+}
+.loginImg{
+    /* border:solid red; */
+    height:42vh;
+    width:auto;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    
+
+}
+.loginLogo{
+    height:12vh;
+    width:6vw;
+    margin-left: 6em;
+    border-radius: 5cm;
+    position: absolute;
+    top: -8vh; 
+    left: 8%; 
+    filter: hue-rotate(262deg) brightness(1.2);
+    z-index: 1;
+}
+.label{
+    text-align: center;
+    margin-top: 5%;
+    margin-right: 5%;
+    font-size: 24pt;
+    font-weight: bold;
+}
+.form{
+    /* border:solid red; */
+    background-color: plum;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    padding: 1em;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.input{
+    width: 15vw;
+    margin-right:2em;
+    margin-left: 2em;
+    margin-top: 1em;
+    border-radius: 5px ;
+    padding: 0.5rem;
+}
+.submit{
+    width: 30%;
+    margin-left: 8.5em;
+    margin-top: 2em;
+    padding: 0.2rem;
+    border-radius: 5px ;
+    background-color: black;
+    color: white;
+}
+.submit:hover{
+    width: 30%;
+    margin-left: 8.5em;
+    margin-top: 2em;
+    padding: 0.2rem;
+    border-radius: 5px ;
+    background-color:rgb(19, 47, 173);
+    color: white;
+}
+
+
+
+.register{
+    margin-left: 4em;
+    margin-top: 2em;
+   
+}

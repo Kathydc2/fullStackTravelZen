@@ -1,6 +1,7 @@
 import React from 'react';
 import './LoginForm.css';
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 
 
@@ -35,26 +36,30 @@ export default function LoginForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Email:</label>
-                <input 
+        <form className="loginForm"  onSubmit={handleSubmit}>
+                <img src="https://st2.depositphotos.com/1001599/43046/v/450/depositphotos_430460192-stock-illustration-sign-page-abstract-concept-vector.jpg" className='loginImg'/>
+            <div className='form'>
+                <img src='https://banner2.cleanpng.com/20190201/fcp/kisspng-computer-icons-scalable-vector-graphics-portable-n-martin-fritz-mibfritz-5c54bcf0846d24.0059587615490572645424.jpg' className='loginLogo'/>
+                <label className='label'>Login</label>
+                <input className='input'
                     type="email" 
                     value={email} 
+                    placeholder='Email'
                     onChange={(e) => setEmail(e.target.value)} 
                     required 
                 />
-            </div>
-            <div>
-                <label>Password:</label>
-                <input 
+                <input className='input' 
                     type="password" 
                     value={password} 
+                    placeholder='Password'
                     onChange={(e) => setPassword(e.target.value)} 
                     required 
                 />
+                <button className="submit" type="submit">Login</button>
+                <p className="register">Not a member? <Link to="/register">Register here!</Link></p>
+            
             </div>
-            <button type="submit">Login</button>
+            
         </form>
     );
 };

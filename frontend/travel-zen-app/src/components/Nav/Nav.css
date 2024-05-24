@@ -25,7 +25,8 @@
 .nav:hover{
     margin-right: 1em;
     font-size: 14pt;
-    color:purple;
+    color:rgb(19, 47, 173);
     font-weight: bold;
+    text-decoration: underline;
 
 }
