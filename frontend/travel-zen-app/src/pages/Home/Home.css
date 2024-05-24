@@ -1,0 +1,14 @@
+.homeImg{
+    /* border: solid black; */
+    width: 100vw;
+    height: 120vh;
+    position: absolute;
+    top: -410px; 
+    /* left: 0; */
+}
+.imageContainer{
+    /* border: solid red; */
+    position: relative;
+    overflow: hidden;
+    height: 50vh;
+}

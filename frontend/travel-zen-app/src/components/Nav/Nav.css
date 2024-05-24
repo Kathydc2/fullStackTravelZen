@@ -1,0 +1,31 @@
+.navBar{
+    background-color: plum;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:3vh;
+    padding: 1.5em;
+
+}
+
+.logo{
+    height: 12vh; 
+    width: auto; 
+    filter:grayscale(100%) brightness(0)
+}
+
+.nav{
+    margin-right: 1em;
+    font-size: 14pt;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+
+}
+.nav:hover{
+    margin-right: 1em;
+    font-size: 14pt;
+    color:purple;
+    font-weight: bold;
+
+}

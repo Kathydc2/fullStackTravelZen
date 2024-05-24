@@ -1,0 +1,54 @@
+.footer{
+    background-color: plum;
+    display: flex;
+
+}
+
+.logo{
+    height: 15vh; 
+    width: auto; 
+    filter:grayscale(100%) brightness(0)
+}
+.footerNav{
+    /* border: solid black; */
+    margin-left: 10em;
+
+}
+.footerNav2{
+    /* border: solid black; */
+    margin-left: 10em;
+    width:20vw
+}
+.foot{
+    /* border:solid red; */
+    font-size: 14pt;
+    font-weight: 200;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    margin: 5%;
+  
+}
+.foot2{
+    /* border:solid red; */
+    font-size: 12pt;
+    text-decoration: none;
+    color: black;
+    margin: 5%;
+}
+.foot:hover{
+    /* border:solid red; */
+    font-size: 14pt;
+    text-decoration: none;
+    color: purple;
+    margin: 5%;
+}
+.footerHeader{
+    margin-top: 2%;
+}
+.footerHeader2{
+    margin-bottom: 0%;
+    margin-top: 2%;
+    margin-left: 4%;
+   
+}
