@@ -1,10 +1,12 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import './Destinations.css'
+import Tours from '../../components/Tours/Tours';
 
 export default function Destinations() {
   return (
-    <div>Destinations</div>
+    <div className='destinations'>
+    <Tours/>
+    </div>
   )
 }
 

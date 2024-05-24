@@ -1,7 +1,8 @@
 import React from 'react';
 import './LoginForm.css';
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { API_URL } from '../../utils/api';
 
 
 
@@ -12,7 +13,7 @@ export default function LoginForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/auth/login', {
+            const response = await fetch(`${API_URL}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -24,14 +25,15 @@ export default function LoginForm() {
             });
             const data = await response.json();
             if (response.ok) {
+                alert("Login Successful");
+                navigate('/');
                 console.log(data); 
-                alert(`Welcome Back`);
             } else {
-                setErrorMessage(data.message);
-                alert("Sorry, we don't recognize this email/password");
+                alert(data.message || 'error with login credentials');
             }
         } catch (error) {
             console.error(error);
+            alert('error with login credentials');
         }
     };
 

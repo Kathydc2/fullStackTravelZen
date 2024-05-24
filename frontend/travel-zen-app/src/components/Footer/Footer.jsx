@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
         <div className='footerNav2'>
          <h1 className='footerHeader2'>Contact</h1>
-         <div className='foot2'><b>Address: </b>  123 Main St Orlando Fl 45268</div>
+         <div className='foot2'><b>Address: </b>  123 Main St Bronx NY 45268</div>
          <div className='foot2'><b>Email: </b>  TravelZen123@hotmail.com</div>
          <div className='foot2'><b>Phone: </b> 555-555-5555</div>
         </div>

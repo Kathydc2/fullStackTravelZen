@@ -8,22 +8,15 @@ import Register from './pages/Register/Register';
 import Home from './pages/Home/Home';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
-import RegisterForm from './components/RegisterForm/RegisterForm';
+import Carousel from './components/Carousel/Carousel';
+
 
 
 export default function App() {
-  // const [users, setUsers] = useState([]);
-  const [updateForm, setUpdateForm] = useState({_id: null, username: '', email: '', password: ''});
-
-  // useEffect(() => {
-  //   getUsers(setUsers)
-  // }, [])
-
 
   return (
     <div className='App'>
       <Nav/>
-      {/* <RegisterForm setUsers={setUsers}/> */}
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/destinations' element={<Destinations/>}/>
@@ -33,7 +26,7 @@ export default function App() {
       <Footer/>
     
     </div>
-  )
-}
+  );
+};
 
 

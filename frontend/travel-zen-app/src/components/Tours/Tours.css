@@ -1,0 +1,23 @@
+.mainPic{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: -265px; 
+    filter:contrast(80%)
+}
+
+.picContainer{
+    /* border: solid red; */
+    position: relative;
+    overflow: hidden;
+    height: 43vh;
+}
+.allTours{
+    position: absolute;
+    top: 42%;
+    left: 44%;
+    color: white;
+    font-size: 38pt; 
+    text-align: center;
+
+}

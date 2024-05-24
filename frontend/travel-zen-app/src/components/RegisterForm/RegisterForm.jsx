@@ -1,7 +1,8 @@
 import React from 'react';
 import './RegisterForm.css';
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from '../../utils/api';
 
 
 
@@ -9,11 +10,12 @@ export default function RegisterForm() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/auth/register', {
+            const response = await fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -25,9 +27,16 @@ export default function RegisterForm() {
                 })
             });
             const data = await response.json();
-            console.log(data); 
+            if (response.ok) {
+                alert("Registration Successful");
+                navigate('/login');
+                console.log(data); 
+            } else {
+                alert(data.message || 'error with registration');
+            }
         } catch (error) {
-            console.error(error); 
+            console.error(error);
+            alert('error with registration');
         }
     };
     
