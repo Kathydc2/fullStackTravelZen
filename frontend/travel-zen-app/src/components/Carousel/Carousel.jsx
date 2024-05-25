@@ -25,8 +25,6 @@ export default function Carousel() {
 
   return (
     <div className='carousel'>
-        
-
           <button className="prev" onClick={moveToPrevious}>{symbols[0]}</button>
         <div className='carouselInner'>
         <h2>{overlayTexts[currentIndex]}</h2>

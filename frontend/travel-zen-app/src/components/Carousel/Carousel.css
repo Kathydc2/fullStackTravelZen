@@ -1,6 +1,6 @@
 
 .carousel {
-    border: solid black;
+    /* border: solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,14 +11,14 @@
     /* border: solid purple; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     position: relative;
     height:50vh;
     width:40vw
 }
   
 .carousel-items {
-    border: solid black;
+    /* border: solid black; */
     width: auto;
     height: 100%;
     object-fit: cover;
@@ -29,6 +29,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
+    color: rgb(19, 47, 173);
     font-size: 24px;
     z-index: 2;
     width:20vw;
@@ -46,11 +47,11 @@
     z-index: 1;
 }
 .carousel .prev {
-    left: 515px;
+    left: 0px;
 }
   
 .carousel .next {
-    right: 515px;
+    right: 0px;
 }
   
   
@@ -66,7 +67,7 @@
 
 .carousel-items.image4 {
     /* border: solid blue; */
-    width:99.1%;
+    width:99.9%;
     border-radius: 5px;
     box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.356);  
 }

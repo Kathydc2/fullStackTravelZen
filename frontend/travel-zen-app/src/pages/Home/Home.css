@@ -1,3 +1,4 @@
+
 .homeImg{
     /* border: solid black; */
     width: 100vw;
@@ -11,4 +12,58 @@
     position: relative;
     overflow: hidden;
     height: 50vh;
+}
+.innerContain{
+    /* border:solid black; */
+    display: flex;
+    justify-content: space-around;
+}
+.imageContain{
+    display: flex;
+    align-items: flex-start;
+   
+}
+.card{
+    border: 1px solid rgb(19, 47, 173);
+    margin-top: 5%;
+    margin-right: 4%;
+    position: relative;
+    width:12vw;
+    height: 28vh;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.356);
+
+}
+.card:nth-child(2) {
+    top: 25px; 
+    
+  }
+  .card:nth-child(3) {
+    top: 50px; 
+  }
+
+.gif{
+    height:28vh;
+    width:11vw;
+    transform: translateX(-1%); 
+}
+.img1{
+    height:28vh;
+    width:20vw;
+    transform: translateX(-23%); 
+}
+.img2{
+    height:28vh;
+    width:22vw;
+    transform: translateX(-25%); 
+
+}
+.header{
+    margin-top: 10%;
+    font-size: 23pt;
+   
+}
+span{
+    color: rgb(19, 47, 173)
 }
