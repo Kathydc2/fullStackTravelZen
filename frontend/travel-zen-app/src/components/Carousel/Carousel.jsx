@@ -31,7 +31,7 @@ export default function Carousel() {
         <div className='carouselInner'>
         <h2>{overlayTexts[currentIndex]}</h2>
        
-         <img className={`carousel-items ${imageClassNames[currentIndex]} active`}
+         <img className={`carousel-items ${imageClassNames[currentIndex]}`}
         src={TourImages[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
       />
