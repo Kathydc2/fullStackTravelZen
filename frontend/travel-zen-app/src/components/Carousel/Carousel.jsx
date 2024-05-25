@@ -6,13 +6,13 @@ import { TourImages } from '../Carousel/Images';
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
    
-    const goToPrevious = () => {
+    const moveToPrevious = () => {
       setCurrentIndex(prevIndex =>
         prevIndex === 0 ? TourImages.length - 1 : prevIndex - 1
       );
     };
   
-    const goToNext = () => {
+    const moveToNext = () => {
       setCurrentIndex(prevIndex =>
         prevIndex === TourImages.length - 1 ? 0 : prevIndex + 1
       );
@@ -25,7 +25,9 @@ export default function Carousel() {
 
   return (
     <div className='carousel'>
-          <button className="prev" onClick={goToPrevious}>{symbols[0]}</button>
+        
+
+          <button className="prev" onClick={moveToPrevious}>{symbols[0]}</button>
         <div className='carouselInner'>
         <h2>{overlayTexts[currentIndex]}</h2>
        
@@ -35,7 +37,7 @@ export default function Carousel() {
       />
   
       </div>
-      <button className="next" onClick={goToNext}>{symbols[1]}</button>
+      <button className="next" onClick={moveToNext}>{symbols[1]}</button>
       
     </div>
   );
