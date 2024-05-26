@@ -1,19 +1,20 @@
 import React from 'react';
 import './LoginForm.css';
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { API_URL } from '../../utils/api';
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 
 export default function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const response = await fetch(`${API_URL}/auth/login`, {
+            const response = await fetch('http://localhost:3000/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -29,7 +30,7 @@ export default function LoginForm() {
                 navigate('/');
                 console.log(data); 
             } else {
-                alert(data.message || 'error with login credentials');
+                alert('error with login credentials');
             }
         } catch (error) {
             console.error(error);

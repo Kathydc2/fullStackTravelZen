@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 const cookieParser = require('cookie-parser');
 const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
+const reviewsRouter = require("./routes/reviews");
 
 
 
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 // -----------------------------------------[Routes]
 app.use("/api/auth", authRouter );
 app.use("/users", usersRouter);
+app.use("/reviews", reviewsRouter);
 
 
 //-------------------------------------------[PORT]

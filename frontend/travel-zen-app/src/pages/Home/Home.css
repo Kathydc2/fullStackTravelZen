@@ -2,10 +2,10 @@
 .homeImg{
     /* border: solid black; */
     width: 100vw;
-    height: 120vh;
+    height: 115vh;
     position: absolute;
     top: -410px; 
-    /* left: 0; */
+ 
 }
 .imageContainer{
     /* border: solid red; */
