@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
 import { useEffect} from 'react';
-import { ReviewsContext } from '../App';
+import { ReviewsContext } from '../pages/Home/Home';
 import { useContext } from 'react';
 
 
-export default function Api() {
+export default function ReviewApi() {
   const { setReviews} = useContext(ReviewsContext);
 
   const fetchReviews = async () => {

@@ -1,6 +1,5 @@
-// import { useState } from 'react';
 import { useContext } from 'react';
-import { ReviewsContext } from '../../App';
+import { ReviewsContext } from '../../pages/Home/Home';
 import axios from 'axios'
 import React from 'react';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
-import { ReviewsContext } from '../../App';
+import { ReviewsContext } from '../../pages/Home/Home';
 
 export default function RemoveReview() {
   const { reviews, setReviews, setUpdateReviewForm } = useContext(ReviewsContext);

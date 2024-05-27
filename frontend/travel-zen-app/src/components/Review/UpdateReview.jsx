@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-// import ReviewPage from './ReviewPage';
-import { ReviewsContext } from '../../App';
+import { ReviewsContext } from '../../pages/Home/Home';
 import { useContext } from 'react';
 
 export default function UpdateReview() {
