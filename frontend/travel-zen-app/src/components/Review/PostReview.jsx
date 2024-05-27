@@ -7,25 +7,26 @@ import React from 'react';
 export default function PostReview() {
   const { reviews, setReviews, createReviewForm, setCreateReviewForm } = useContext(ReviewsContext);
 
-    const createReview = async (e) => {
-        e.preventDefault();
-        const res = await axios.post("http://localhost:3000/reviews", createReviewForm);
-        console.log(res);
-        setReviews(() => [...reviews, res.data.review]);
-    };
-
-    
-    const updateCreateFormField = (e) => {
-    const { value, name } = e.target;
-    console.log({ name, value });
-
+  const createReview = async (e) => {
+    e.preventDefault();
+    const res = await axios.post("http://localhost:3000/reviews", createReviewForm);
+    console.log(res);
+    setReviews(() => [...reviews, res.data.review]);
     // Clear Form
     setCreateReviewForm(() => ({
-      ...createReviewForm,
+      name: "",
+      description: "",
+    }));
+  };
+
+    
+  const updateCreateFormField = (e) => {
+    const { value, name } = e.target;
+    setCreateReviewForm(prevState => ({
+      ...prevState,
       [name]: value,
     }));
-    console.log("form cleared.");
-  };
+  };;
 
   return (
     <div className='createReview'>
