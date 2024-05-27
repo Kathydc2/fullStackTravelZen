@@ -18,7 +18,7 @@ const createReview = async (req, res) => {
         name: name,
         description:description
     });
-
+    res.json({review: review});
 };
 
 const updateReview = async (req, res) => {

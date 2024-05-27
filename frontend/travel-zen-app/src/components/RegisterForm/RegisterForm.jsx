@@ -32,7 +32,7 @@ export default function RegisterForm() {
                 navigate('/login');
                 console.log(data); 
             } else {
-                alert(data.message || 'error with registration');
+                alert('error with registration');
             }
         } catch (error) {
             console.error(error);
