@@ -1,0 +1,16 @@
+.removeReview{
+    border:solid red;
+  
+}
+.reviewDisplay{
+    border: solid green;
+    display:flex
+}
+.review{
+    border: solid blue;
+    margin: 1em;
+    text-align: center;
+}
+.btnContainer{
+    border: solid red
+}

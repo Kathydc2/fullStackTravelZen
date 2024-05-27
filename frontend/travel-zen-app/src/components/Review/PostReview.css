@@ -1,0 +1,19 @@
+.createReview{
+    border:solid blue;
+    width:20vw
+}
+.postReview{
+    border:solid green;
+    display: flex;
+    
+}
+.createInput{
+    margin: 1em;
+}
+.createText{
+    margin: 1em;
+}
+.createBtn{
+    border:solid red;
+    margin-left: 5em;
+}

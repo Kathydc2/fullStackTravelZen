@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ReviewsContext } from '../../pages/Home/Home';
 import axios from 'axios'
 import React from 'react';
+import './PostReview.css'
 
 export default function PostReview() {
   const { reviews, setReviews, createReviewForm, setCreateReviewForm } = useContext(ReviewsContext);
@@ -29,23 +30,23 @@ export default function PostReview() {
 
   return (
     <div className='createReview'>
-        <div className="formAdmin">
-          <h1>+New Review</h1>
+        <div className="postReview">
+          <h1>We'd love your feedback!</h1>
           <form onSubmit={createReview}>
-            <input
+            <input className='createInput'
               name="name"
               value={createReviewForm.name}
               placeholder="name"
               onChange={updateCreateFormField}
             />
-            <textarea
+            <textarea className='createText'
               name="description"
               value={createReviewForm.description}
               placeholder="description"
               onChange={updateCreateFormField}
             />
 
-            <button type="submit">Submit</button>
+            <button className='createBtn' type="submit">Submit</button>
           </form>
         </div>
       

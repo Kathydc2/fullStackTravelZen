@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import { ReviewsContext } from '../../pages/Home/Home';
 import { useContext } from 'react';
+import './UpdateReview.css'
 
 export default function UpdateReview() {
   const { reviews, setReviews, updateReviewForm, setUpdateReviewForm} = useContext(ReviewsContext);

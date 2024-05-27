@@ -1,8 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Carousel from '../../components/Carousel/Carousel';
-import UpdateReview from '../../components/Review/UpdateReview';
-import PostReview from '../../components/Review/PostReview';
+
 import RemoveReview from '../../components/Review/RemoveReview';
 import ReviewApi from '../../utils/ReviewApi';
 import {  useState, createContext } from 'react';
@@ -50,8 +49,6 @@ export default function Home() {
       </div>
       <ReviewsContext.Provider value={{reviews, setReviews, createReviewForm, setCreateReviewForm, updateReviewForm, setUpdateReviewForm}}>
         <ReviewApi/>
-        <UpdateReview />
-        <PostReview />
         <RemoveReview />
       </ReviewsContext.Provider>
     </div>
