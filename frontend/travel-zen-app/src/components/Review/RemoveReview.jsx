@@ -48,6 +48,7 @@ export default function RemoveReview() {
       setCurrentPage(currentPage - 1);
     }
   };
+  const symbols = ['◀', '▶'];
 
   return (
     <div className='removeReview'>
@@ -59,14 +60,14 @@ export default function RemoveReview() {
             <h2>{review.name}</h2>
             <p>{review.description}</p>
             <div className="btnContainer">
-              <button
+              <button className='removeBtn'
                 onClick={() => {
                   toggleUpdate(review);
                 }}
               >
                 Update
               </button>
-              <button
+              <button className='removeBtn'
                 onClick={() => {
                   deleteReview(review._id);
                 }}
@@ -78,12 +79,12 @@ export default function RemoveReview() {
         ))}
       </div>
       <div className="pagination">
-        <button onClick={prevPage} disabled={currentPage === 1}>
-          &lt;
+        <button className='pageBtn' onClick={prevPage} disabled={currentPage === 1}>
+        {symbols[0]}
         </button>
         <span>{currentPage} / {totalPages}</span>
-        <button onClick={nextPage} disabled={currentPage === totalPages}>
-          &gt;
+        <button className='pageBtn' onClick={nextPage} disabled={currentPage === totalPages}>
+        {symbols[1]}
         </button>
       </div>
     </div>

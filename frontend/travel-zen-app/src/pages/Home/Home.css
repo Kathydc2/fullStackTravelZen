@@ -2,9 +2,9 @@
 .homeImg{
     /* border: solid black; */
     width: 100vw;
-    height: 115vh;
+    height: 145vh;
     position: absolute;
-    top: -410px; 
+    top: -600px; 
  
 }
 .imageContainer{
@@ -25,7 +25,7 @@
 }
 .card{
     border: 1px solid rgb(19, 47, 173);
-    margin-top: 5%;
+    margin-top: 8%;
     margin-right: 4%;
     position: relative;
     width:12vw;
@@ -36,11 +36,11 @@
 
 }
 .card:nth-child(2) {
-    top: 25px; 
+    top: 70px; 
     
   }
   .card:nth-child(3) {
-    top: 50px; 
+    top: 140px; 
   }
 
 .gif{
@@ -60,7 +60,7 @@
 
 }
 .header{
-    margin-top: 10%;
+    margin-top: 5%;
     font-size: 23pt;
    
 }

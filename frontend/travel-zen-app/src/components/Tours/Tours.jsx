@@ -1,6 +1,6 @@
 import React from 'react';
 import './Tours.css';
-import Carousel from '../Carousel/Carousel';
+
 
 
 
@@ -13,7 +13,7 @@ export default function Tours() {
      <div className='allTours'>All Tours</div>
     </div>
 
-    <Carousel/>
+   
 
     </div>
   );

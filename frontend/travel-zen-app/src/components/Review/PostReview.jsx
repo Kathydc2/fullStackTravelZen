@@ -31,18 +31,18 @@ export default function PostReview() {
   return (
     <div className='createReview'>
         <div className="postReview">
-          <h1>We'd love your feedback!</h1>
+          <h1 className='postHeader'>We'd love your feedback!</h1>
           <form onSubmit={createReview}>
             <input className='createInput'
               name="name"
               value={createReviewForm.name}
-              placeholder="name"
+              placeholder="Name"
               onChange={updateCreateFormField}
             />
             <textarea className='createText'
               name="description"
               value={createReviewForm.description}
-              placeholder="description"
+              placeholder="Feedback"
               onChange={updateCreateFormField}
             />
 

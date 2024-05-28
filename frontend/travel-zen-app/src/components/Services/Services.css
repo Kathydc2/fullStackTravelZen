@@ -1,0 +1,37 @@
+.services{
+    /* border:solid red; */
+    display:flex;
+    justify-content: space-evenly;
+    margin-left: 2em;
+    margin-right: 2em;
+
+  
+
+}
+.traveler{
+    height:55vh;
+    width: auto;
+
+}
+
+.servCard{
+    /* border:solid green; */
+    width:25%;
+    height:100%;
+    margin-top: 10%;
+    padding: 1rem;
+    border-radius: 5px;
+    border-bottom: 2px solid plum;
+    border-right: 2px solid plum;
+
+}
+.servImg{
+    height:30%;
+    width:17.5%;
+    border: solid plum;
+    filter: hue-rotate(310deg) brightness(1);
+    background-color: plum;
+    border-radius: 2cm;
+    float: right;
+
+}

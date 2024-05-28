@@ -48,24 +48,24 @@ export default function UpdateReview() {
        {updateReviewForm._id && (
           <>
             <div className="formAdmin">
-              <h1>Update Review</h1>
+              <h2>Edit Feedback</h2>
               <form onSubmit={updateReview}>
-                <input
+                <input className='updateInput'
                   name="name"
                   value={updateReviewForm.name}
-                  placeholder="name"
+                  placeholder="Name"
                   onChange={handleUpdateFieldChange}
                 />
-                <textarea
+                <textarea className='updateText'
                   name="description"
                   value={updateReviewForm.description}
-                  placeholder="description"
+                  placeholder="Feedback"
                   onChange={handleUpdateFieldChange}
                 />
                 
                  
 
-                <button type="submit">Submit</button>
+                <button className='updateBtn' type="submit">Submit</button>
                 </form>
                 </div>
           </>

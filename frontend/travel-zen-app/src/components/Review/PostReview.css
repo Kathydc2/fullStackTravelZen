@@ -1,19 +1,40 @@
 .createReview{
-    border:solid blue;
-    width:20vw
+    /* border:solid blue; */
+    width:20vw;
+   
+    border-radius: 8px;
 }
 .postReview{
-    border:solid green;
+    /* border:solid green; */
     display: flex;
     
 }
 .createInput{
     margin: 1em;
+    border-radius: 5px;
+    margin-top: 20%;
 }
 .createText{
     margin: 1em;
+    border-radius: 5px;
+
 }
 .createBtn{
-    border:solid red;
-    margin-left: 5em;
+    /* border:solid red; */
+    margin-left: 4.5em;
+    background-color:rgb(91, 118, 236);
+    border-radius: 5px;
+    color:white;
+    font-size: 11pt;
+}
+.postHeader{
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 8%;
+
+}
+.pagination{
+   display: flex;
+   justify-content:left;
+   margin-left: 7em;
 }
