@@ -1,6 +1,7 @@
 .footer{
-    background-color: plum;
+    background-color: lightskyblue;
     display: flex;
+    height:22.6vh
 
 }
 
@@ -27,7 +28,7 @@
     color: black;
     display: flex;
     margin: 5%;
-    font-weight: 500;
+   
   
 }
 .foot2{
