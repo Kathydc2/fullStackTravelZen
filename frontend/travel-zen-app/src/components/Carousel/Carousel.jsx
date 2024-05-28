@@ -21,7 +21,7 @@ export default function Carousel() {
     const symbols = ['◀', '▶'];
 
     const imageClassNames = ['image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'image8'];
-    const overlayTexts = ['Aruba', 'Costa Rica', 'Dominican Republic', 'Dubai', 'Jamaica', 'Mexico', 'Puerto Rico', 'Turks & Caicos'];
+    const overlayTexts = ['Aruba $999', 'Costa Rica $1100', 'Dominican Republic $899', 'Dubai $1200', 'Jamaica $900', 'Mexico $850', 'Puerto Rico $799', 'Turks & Caicos $1000'];
 
   return (
     <div className='carousel'>
