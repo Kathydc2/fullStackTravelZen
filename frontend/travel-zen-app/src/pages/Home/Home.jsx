@@ -9,7 +9,7 @@ import Services from '../../components/Services/Services';
 
 export const ReviewsContext = createContext();
 
-export default function Home() {
+export default function Home({user, setUser}) {
   const [reviews, setReviews] = useState([]);
   
 
@@ -52,7 +52,7 @@ export default function Home() {
       <Services/>
       <ReviewsContext.Provider value={{reviews, setReviews, createReviewForm, setCreateReviewForm, updateReviewForm, setUpdateReviewForm}}>
         <ReviewApi/>
-        <RemoveReview />
+        <RemoveReview user={user} setUser={setUser} />
       </ReviewsContext.Provider>
     </div>
   )

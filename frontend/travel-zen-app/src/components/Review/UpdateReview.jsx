@@ -1,46 +1,68 @@
 import React from 'react';
 import axios from 'axios'
 import { ReviewsContext } from '../../pages/Home/Home';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import './UpdateReview.css'
 
-export default function UpdateReview() {
-  const { reviews, setReviews, updateReviewForm, setUpdateReviewForm} = useContext(ReviewsContext);
+export default function UpdateReview({user}) {
+  const { reviews, setReviews, updateReviewForm, setUpdateReviewForm, createReviewForm, setCreateReviewForm} = useContext(ReviewsContext);
 
-    const handleUpdateFieldChange = (e) => {
-        const { value, name } = e.target;
-        setUpdateReviewForm(() => ({
-          ...updateReviewForm,
-          [name]: value,
-        }));
-      };
-    
-    
-      const updateReview = async (e) => {
-        e.preventDefault();
-        const { name, description } = updateReviewForm;
-        const res = await axios.put(
-          `http://localhost:3000/reviews/${updateReviewForm._id}`,
-          { name, description }
-        );
-        console.log(res);
-    
+  useEffect(() => {
+   
+    setCreateReviewForm(prevForm => ({
+      ...prevForm,
+      user: user._id
+    }));
+  }, [user._id, setCreateReviewForm]);
 
-        const newReviews = [...reviews];
-        const reviewIndex = reviews.findIndex((review) => {
-          return review._id === updateReviewForm._id;
-        });
-        newReviews[reviewIndex] = res.data.review;
-        setReviews(newReviews);
-    
-    
-        setUpdateReviewForm(() => ({
-          _id: null,
-          name: "",
-          description: "",
-        }));
-      };
-    
+  
+  const updateReview = async (e) => {
+    e.preventDefault();
+    const { name, description, user } = updateReviewForm;
+
+    const reviewIndex = reviews.findIndex((review) => review._id === _id);
+
+    if (reviewIndex === -1 || reviews[reviewIndex].userId !== user._id) {
+      alert("Cannot update this review");
+      return;
+    }
+
+    try {
+      const res = await axios.put(
+        `http://localhost:3000/reviews/${_id}`,
+        { name, description, userId: user._id },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        }
+      );
+
+      console.log(res);
+
+      const newReviews = [...reviews];
+      newReviews[reviewIndex] = res.data.review;
+      setReviews(newReviews);
+
+      // Reset the form
+      setUpdateReviewForm({
+        _id: null,
+        name: "",
+        description: "",
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };;
+
+  const handleUpdateFieldChange = (e) => {
+    const { value, name } = e.target;
+    setUpdateReviewForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
+
    
   return (
     <div className='updateReview'>

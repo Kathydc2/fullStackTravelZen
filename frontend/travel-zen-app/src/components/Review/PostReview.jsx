@@ -1,20 +1,25 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ReviewsContext } from '../../pages/Home/Home';
 import axios from 'axios'
 import React from 'react';
 import './PostReview.css'
 
 
-export default function PostReview() {
+export default function PostReview({user}) {
   const { setReviews, createReviewForm, setCreateReviewForm } = useContext(ReviewsContext);
-  const { user } = useContext(ReviewsContext);
+  const [createdReview, setCreatedReview] = useState(false);
 
 
   const createReview = async (e) => {
     e.preventDefault();
 
-    if (!user || !user._id) {
-      alert("User must be logged in to post a review");
+    if (!user._id) {
+      alert("Log in to leave feedback!");
+      return;
+    }
+
+    if (createdReview) {
+      alert("Please edit your existing rfeedback");
       return;
     }
 
@@ -32,9 +37,10 @@ export default function PostReview() {
         name: "",
         description: "",
       });
+      setCreatedReview(true);
     } catch (error) {
-      console.error("Error creating review:", error);
-      alert("Failed to create review");
+      console.error(error);
+      alert("failed to post");
     }
   };
 

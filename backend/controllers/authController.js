@@ -48,7 +48,7 @@ const login = async (req, res ) => {
             expires: token.expiresIn,
             sameSite: "lax"
         });
-        res.status(200).json({ message: "Login successful!", token,issuedAtDate,exp: expString});
+        res.status(200).json({ message: "Login successful!", token,issuedAtDate,exp: expString, _id: user._id});
 
 
     }catch(error){

@@ -6,7 +6,7 @@ import './RemoveReview.css'
 import PostReview from './PostReview';
 import UpdateReview from './UpdateReview';
 
-export default function RemoveReview() {
+export default function RemoveReview({user, setUser}) {
   const { reviews, setReviews, setUpdateReviewForm } = useContext(ReviewsContext);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,20 +19,29 @@ export default function RemoveReview() {
   const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
 
   const deleteReview = async (_id) => {
+    if (!user || !user.id) {
+      alert("Cannot delete this feedback");
+      return;
+    }
     try {
       await axios.delete(`http://localhost:3000/reviews/${_id}`);
       const newReviews = reviews.filter((review) => review._id !== _id);
       setReviews(newReviews);
     } catch (error) {
-      console.error('deleting review failed', error);
+      console.error(error);
     }
   };
 
   const toggleUpdate = (review) => {
+    if (!user || user.id !== review.userId) {
+      alert("Cannot update this feedback");
+      return;
+    }
     setUpdateReviewForm({
       _id: review._id,
       name: review.name,
       description: review.description,
+      userId: review.userId,
     });
   };
 
@@ -52,8 +61,8 @@ export default function RemoveReview() {
   return (
     <div className='removeReview'>
       <div className="reviewDisplay">
-        <PostReview/>
-        <UpdateReview/>
+        <PostReview user={user} setUser={setUser}/>
+        <UpdateReview user={user} setUser={setUser}/>
         {currentReviews.map((review) => (
           <div className='review' key={review._id}>
             <h2>{review.name}</h2>
@@ -68,7 +77,7 @@ export default function RemoveReview() {
               </button>
               <button className='removeBtn'
                 onClick={() => {
-                  deleteReview(review._id);
+                  deleteReview(review._id, review.userId);
                 }}
               >
                 Delete

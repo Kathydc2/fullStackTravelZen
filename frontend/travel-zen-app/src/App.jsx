@@ -1,6 +1,6 @@
 import './App.css';
 import axios from "axios";
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import  Destinations  from './pages/Destinations/Destinations';
 import Login from './pages/Login/Login';
@@ -14,20 +14,21 @@ import Footer from './components/Footer/Footer';
 export default function App() {
   const [user, setUser] = useState([]);
 
-  const fetchUsers = async () => {
-    try{
-      const response = await axios.get("http://localhost:3000/users");
-      const users = await response.data;
-      setUser(users);
-      console.log("-Users Fetched-", users);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    }
-  };
+  //fetch all users to prop drill
+  // const fetchUsers = async () => {
+  //   try{
+  //     const response = await axios.get("http://localhost:3000/users");
+  //     const users = await response.data;
+  //     setUser(users);
+  //     console.log("-Users Fetched-", users);
+  //   } catch (error) {
+  //     console.error("Error fetching users:", error);
+  //   }
+  // };
   
-    useEffect(() => {
-      fetchUsers();
-    }, []);
+    // useEffect(() => {
+      // fetchUsers();
+    // }, []);
   
 
 
@@ -35,7 +36,7 @@ export default function App() {
     <div className='App'>
       <Nav/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home user={user} setUser={setUser}/>}/>
         <Route path='/destinations' element={<Destinations/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login setUser={setUser} />} />
