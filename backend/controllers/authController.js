@@ -64,8 +64,15 @@ const checkAuth = (req, res) => {
     res.sendStatus(200);
 };
 
+const logout = (req,res) => {
+    res.clearCookie("Authorization");
+    res.sendStatus(200);
+    console.log('Successfully Logged Out')
+}
+
 module.exports = {
     register,
     login,
-    checkAuth
+    checkAuth,
+    logout
 };

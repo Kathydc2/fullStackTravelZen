@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Nav.css'
+import LogOutFunc from "../LoginOutFunc/LogoutFunc";
 
 export default function Nav() {
 
@@ -12,6 +13,7 @@ export default function Nav() {
         <Link className="nav" to="/destinations">Destinations</Link>
         <Link className="nav" to="/register">Register</Link>
         <Link className="nav" to="/login">Login</Link>
+        <LogOutFunc />
       </div>
     </nav>
   );

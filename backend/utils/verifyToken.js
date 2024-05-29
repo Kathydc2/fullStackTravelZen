@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
+   console.log("Hit requireAuth() ")
     const token = req.cookies.accessToken
 
     if (!token) {

@@ -1,16 +1,18 @@
 import React from 'react';
+// import axios from "axios";
 import './LoginForm.css';
-import { useState } from "react";
+import { useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-
-
-export default function LoginForm() {
+export default function LoginForm({setUser}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+ 
+
     const navigate = useNavigate();
 
+  
     async function handleSubmit(e) {
         e.preventDefault();
         try {
@@ -24,11 +26,12 @@ export default function LoginForm() {
                     password: password
                 })
             });
-            const data = await response.json();
+            const user = await response.json();
             if (response.ok) {
                 alert("Login Successful");
+                setUser(user);
                 navigate('/');
-                console.log(data); 
+                console.log(user); 
             } else {
                 alert('error with login credentials');
             }
@@ -37,6 +40,7 @@ export default function LoginForm() {
             alert('error with login credentials');
         }
     };
+
 
     return (
         <form className="loginForm"  onSubmit={handleSubmit}>

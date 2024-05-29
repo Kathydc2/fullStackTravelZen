@@ -25,7 +25,7 @@ export default function UpdateReview() {
         );
         console.log(res);
     
-        // Update State
+
         const newReviews = [...reviews];
         const reviewIndex = reviews.findIndex((review) => {
           return review._id === updateReviewForm._id;
@@ -33,7 +33,7 @@ export default function UpdateReview() {
         newReviews[reviewIndex] = res.data.review;
         setReviews(newReviews);
     
-        // Clear Form
+    
         setUpdateReviewForm(() => ({
           _id: null,
           name: "",
@@ -44,34 +44,29 @@ export default function UpdateReview() {
    
   return (
     <div className='updateReview'>
-      
-       {updateReviewForm._id && (
-          <>
-            <div className="formAdmin">
-              <h2>Edit Feedback</h2>
-              <form onSubmit={updateReview}>
-                <input className='updateInput'
-                  name="name"
-                  value={updateReviewForm.name}
-                  placeholder="Name"
-                  onChange={handleUpdateFieldChange}
-                />
-                <textarea className='updateText'
-                  name="description"
-                  value={updateReviewForm.description}
-                  placeholder="Feedback"
-                  onChange={handleUpdateFieldChange}
-                />
-                
-                 
-
-                <button className='updateBtn' type="submit">Submit</button>
-                </form>
-                </div>
-          </>
-        )}
-    
-      
+      {updateReviewForm._id && (
+        <>
+          <div className="formAdmin">
+            <h2>Edit Feedback</h2>
+            <form onSubmit={updateReview}>
+              <input className='updateInput'
+                name="name"
+                value={updateReviewForm.name}
+                placeholder="Name"
+                onChange={handleUpdateFieldChange}
+              />
+              <textarea className='updateText'
+                name="description"
+                value={updateReviewForm.description}
+                placeholder="Feedback"
+                onChange={handleUpdateFieldChange}
+              />
+            
+            <button className='updateBtn' type="submit">Submit</button>
+            </form>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -1,10 +1,12 @@
 import React from 'react';
-import LoginForm from '../../components/LoginForm/LoginForm';
+import LoginForm from '../../components/LoginOutFunc/LoginForm';
 
-export default function Login() {
+
+export default function Login({setUser}) {
   return (
     <div className='Login'>
-    <LoginForm/>
+    <LoginForm setUser={setUser}/>
+    
     </div>
   )
 }

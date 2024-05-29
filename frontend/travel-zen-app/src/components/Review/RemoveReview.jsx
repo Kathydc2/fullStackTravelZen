@@ -24,12 +24,11 @@ export default function RemoveReview() {
       const newReviews = reviews.filter((review) => review._id !== _id);
       setReviews(newReviews);
     } catch (error) {
-      console.error('Error deleting review:', error);
+      console.error('deleting review failed', error);
     }
   };
 
   const toggleUpdate = (review) => {
-    console.log("CurrentReview :", review);
     setUpdateReviewForm({
       _id: review._id,
       name: review.name,
@@ -78,7 +77,7 @@ export default function RemoveReview() {
           </div>
         ))}
       </div>
-      <div className="pagination">
+      <div className="pages">
         <button className='pageBtn' onClick={prevPage} disabled={currentPage === 1}>
         {symbols[0]}
         </button>

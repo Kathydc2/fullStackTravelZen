@@ -13,10 +13,13 @@
     margin: 1em;
     border-radius: 5px;
     margin-top: 20%;
+ 
 }
 .createText{
-    margin: 1em;
+    /* border:solid green; */
+    margin: 1.23em;
     border-radius: 5px;
+
 
 }
 .createBtn{
