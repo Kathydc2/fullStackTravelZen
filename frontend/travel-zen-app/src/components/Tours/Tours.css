@@ -30,6 +30,7 @@
 }
 .eachTour{
     /* border:solid blue; */
+    background-color: plum;
     width:28%;
     margin: 1em;
     box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.356); 
@@ -71,11 +72,51 @@
     margin-right: 5%;
 }
 
-.travContainer{
+.travPic{
+    width:15%;
 
 }
-.travPic{
-    height:30%;
-   
+.searchBar{
+    /* border:solid black; */
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.356); 
+}
+.searchForm{
+    /* border:solid red; */
+    border-radius: 5px;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.356); 
+    background-color: lightskyblue;
+    width:48vw;
+    height:8vh;
+    margin-top:5%;
+    margin-right: 4%;
+    padding: 3em;
 
+}
+.searchLabel{
+    /* border: solid green; */
+   font-size: 16pt;
+
+}
+
+.searchBtn{
+    width: 12%;
+    margin-left: 41%;
+    font-size: larger;
+    margin-top: 1em;
+    border-radius: 5px ;
+    background-color:rgb(19, 47, 173);
+    color: white;
+}
+.searchInput{
+    font-size: 14pt;
+    margin: 1%;
+    border-radius: 5px;
+}
+.tourHeader{
+    text-align: center;
+    font-size: 32pt;
+    color: rgb(19, 47, 173) ;
+    
 }
