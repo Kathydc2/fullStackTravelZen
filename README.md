@@ -1,28 +1,24 @@
 
 ## Travel Zen App
-Overview
 This is my first full-stack web application, named Travel Zen. It utilizes Express for the backend and Mongoose to connect to my MongoDB account. The backend is running on PORT 3000. I have separated the controllers for reviews, tours, users, and authentication. For user authentication, I explored JWT and password hashing for the first time. The authentication is fully functional, including the token generation and validation. The application uses three schemas, organized in the models folder.
 
 ## Backend
-Technologies Used
+I used
 Express: For server-side logic.
 Mongoose: For MongoDB interactions.
 JWT: For user authentication.
 BCrypt: For password hashing.
-Features
 Controllers: Separated controllers for reviews, tours, users, and authentication.
 User Authentication: Implemented with JWT and password hashing.
 Database Connection: Connected to MongoDB using the DB_URL.
-Experience
-The backend development was straightforward. Connecting to my MongoDB account using the DB_URL was an overall easy process.
+My experience with the backend development was straightforward. Connecting to my MongoDB account using the DB_URL was an overall easy process.
 
 ## Frontend
-Technologies Used
+I used
 Vite: For building the frontend, running on PORT 5173.
 React: Utilized hooks like useEffect, useContext, and useState.
 React Router: For navigating between different pages.
 CSS: Each component has its own CSS file for styling.
-Features
 Components: Organized in a components folder, each with its own CSS file.
 Browser Router: Used for navigation in the footer and nav bar across 4 pages (Home, Destinations, Register, and Login).
 Image Handling: Added images from my computer to the public folder for the carousel and destinations page.
@@ -41,10 +37,10 @@ Home
 Destinations
 Register
 Login
-A "Log Out" button is also implemented and successfully logs the user out.
+and also a "Log Out" button which successfully logs the user out.
 
 ## Deployment
-The project isn't deployed yet. To run the servers locally, you need to change the script in the frontend to "start". To start both servers, use npm start for each.
+The project isn't deployed yet.I changed the script in the frontend to "start". To run the servers locally, use npm start for each.
 
 ## Conclusion
 Travel Zen is a work in progress, with many foundational features implemented. I plan to continue enhancing the application, particularly the review management and tours page functionalities. This project has been a valuable learning experience, especially in integrating user authentication and managing a full-stack development workflow.
