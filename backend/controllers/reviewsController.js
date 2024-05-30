@@ -37,7 +37,7 @@ const updateReview = async (req, res) => {
 const deleteReview = async (req, res) => {
     const reviewId = req.params.id;
     await Review.findByIdAndDelete(reviewId);
-    res.json({success: "User has been deleted successfully"});
+    res.json({success: "Review deleted successfully"});
 };
 
 module.exports = {

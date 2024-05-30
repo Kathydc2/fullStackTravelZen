@@ -13,7 +13,7 @@ export default function ReviewApi() {
     const info = await response.data;
     console.log(info);
     setReviews(info.reviews);
-    console.log("-Reviews Fetched-");
+    console.log("Fetched all reviews");
   };
 
   useEffect(() => {

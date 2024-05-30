@@ -21,3 +21,61 @@
     text-align: center;
 
 }
+.toursInner{
+    /* border:solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3em;
+}
+.eachTour{
+    /* border:solid blue; */
+    width:28%;
+    margin: 1em;
+    box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.356); 
+    border-radius: 5px;
+   
+}
+.tourImg{
+    /* border: solid orange; */
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: cover; 
+}
+
+.favBtn{
+    width: 20%;
+    margin-left: 38%;
+    margin-bottom: 2em;
+    /* padding: 0.2rem; */
+    border-radius: 5px ;
+    background-color:rgb(19, 47, 173);
+    color: white;
+ 
+}
+.price{
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 4%;
+}
+.duration{
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 3%;
+
+}
+.destination{
+    text-align: center;
+    margin-right: 5%;
+}
+
+.travContainer{
+
+}
+.travPic{
+    height:30%;
+   
+
+}

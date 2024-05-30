@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 const reviewsRouter = require("./routes/reviews");
+const toursRouter = require("./routes/tours")
 
 
 //------------------------------------------[Requirements/Middleware]
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter );
 app.use("/users", usersRouter);
 app.use("/reviews", reviewsRouter);
+app.use("/tours", toursRouter);
 
 
 //-------------------------------------------[PORT]
