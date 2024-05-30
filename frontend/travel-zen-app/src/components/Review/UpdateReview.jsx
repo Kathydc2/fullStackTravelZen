@@ -31,10 +31,7 @@ export default function UpdateReview({user}) {
 
     try {
       const res = await axios.put(`http://localhost:3000/reviews/${updateReviewForm._id}`, reviewData);
-      console.log("Response:", res);
 
-      const updatedReview = res.data.review;
-      console.log("updatedReview:", updatedReview);
  
       setReviews((prevReviews) => prevReviews.map(review => 
         review._id === updateReviewForm._id ? res.data.review : review

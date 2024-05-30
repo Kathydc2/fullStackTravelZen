@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.css'
+//imports link from router dom
 import { Link } from "react-router-dom"
 
 export default function Footer() {
@@ -8,6 +9,7 @@ export default function Footer() {
         <img className="logo" src="https://www.travel-zen.com/storage/TRAVELZEN_logo-seul.png"/>
         <div className='footerNav'>
         <h2 className='footerHeader'>Quick Links</h2>
+        {/* below are the links I want to add on the footer as a quickreference */}
         <Link className="foot" to="/">Home</Link>
         <Link className="foot" to="/destinations">Destinations</Link>
         <Link className="foot" to="/register">Register</Link>

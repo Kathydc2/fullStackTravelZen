@@ -13,6 +13,7 @@ export default function Nav() {
         <Link className="nav" to="/destinations">Destinations</Link>
         <Link className="nav" to="/register">Register</Link>
         <Link className="nav" to="/login">Login</Link>
+        {/* imported the logout func to have the button show on the nav */}
         <LogOutFunc />
       </div>
     </nav>

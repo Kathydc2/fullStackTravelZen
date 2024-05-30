@@ -1,7 +1,7 @@
 const express = require("express");
 const {fetchAllReviews, fetchReview, createReview, updateReview, deleteReview} = require("../controllers/reviewsController");
 
-
+//my routes for my reviews and made sure to test all on postman
 const router = express.Router();
 
 //------------------------------------------[GET all reviews - READ]

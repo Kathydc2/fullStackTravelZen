@@ -2,8 +2,8 @@ import React from 'react';
 import './Tours.css';
 
 export default function Tours({tours, setTours, }) {
-
- 
+//getting the tours and settours from the destinations page where it is being rendered
+ // create a book now func and fix the search engine to pull the data 
 
   return (
     <div className='tours'>
@@ -26,6 +26,7 @@ export default function Tours({tours, setTours, }) {
     <h1 className='tourHeader'>All Inclusive Resorts</h1>
 
     <div className="toursInner">
+      {/* //mapping through the tours to create the cards of the tours API from my mongoDb */}
         {tours.map(tour => (
           <div className="eachTour" key={tour._id}>
             <h1 className='destination'>{tour.destination}</h1>

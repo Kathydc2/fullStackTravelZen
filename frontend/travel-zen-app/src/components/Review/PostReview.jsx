@@ -6,24 +6,27 @@ import './PostReview.css'
 
 
 export default function PostReview({user}) {
+  //user is being passed down from removeReview
+  //using useContext which is being passed down from the HomePage
   const { setReviews ,createReviewForm, setCreateReviewForm} = useContext(ReviewsContext);
   const [createdReview, setCreatedReview] = useState(false);
 
 
   const createReview = async (e) => {
     e.preventDefault();
-
+    //checking user._id
     if (!user._id) {
       alert("Login to leave feedback!");
       return;
     }
-
+    //if the user tries to resubmit another review
     if (createdReview) {
       alert("Please edit your existing feedback");
       return;
     }
 
     const reviewData = {
+      //creates a new obj by spreading properties of createReviewForm and adding new property user with the user._id value
       ...createReviewForm,
       user: user._id,
     };
@@ -31,19 +34,23 @@ export default function PostReview({user}) {
     try {
       const res = await axios.post("http://localhost:3000/reviews", reviewData);
       console.log(res);
+      //updates the reviews state by adding new review received 
+      //adding the new review to the existing preReviews using the spread operator and appends it to the res.data.review
       setReviews((prevReviews) => [...prevReviews, res.data.review]);
+      //resets the state to its intial values 
       setCreateReviewForm({
         userId: " ",
         name: "",
         description: "",
       });
+      //sets the createReviw to true
       setCreatedReview(true);
     } catch (error) {
       console.error(error);
       alert("failed to post");
     }
   };
-
+  //used to update the inputs field
   const updateCreateFormField = (e) => {
     const { value, name } = e.target;
     setCreateReviewForm((prevState) => ({

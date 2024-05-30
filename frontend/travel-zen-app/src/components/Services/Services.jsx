@@ -2,6 +2,7 @@ import React from 'react';
 import './Services.css'
 
 export default function Services() {
+  //these will be the services the website offers
   return (
     <div className='services'>
         <div >

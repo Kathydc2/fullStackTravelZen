@@ -7,7 +7,9 @@ import PostReview from './PostReview';
 import UpdateReview from './UpdateReview';
 
 export default function RemoveReview({user}) {
+  // user is being passed down from the app.jsx then to home then to removeReview
   const { reviews, setReviews, setUpdateReviewForm } = useContext(ReviewsContext);
+  //state for the pages on the reviews because I want only 4 per page to show
   const [currentPage, setCurrentPage] = useState(1);
   const reviewsPerPage = 4;
 
@@ -18,6 +20,7 @@ export default function RemoveReview({user}) {
   const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
 
   const deleteReview = async (_id) => {
+    //checking if the user._id matches 
     if (!user._id) {
       alert("Cannot delete this feedback");
       return;
@@ -58,7 +61,7 @@ export default function RemoveReview({user}) {
   };
 
   const symbols = ['◀', '▶'];
-
+  // passing user to the Postreview and the UpdateReview
   return (
     <div className='removeReview'>
       <div className="reviewDisplay">

@@ -8,3 +8,4 @@ export const TourImages = [
     '/TourImages/PR.jpg',
     '/TourImages/turksandcaicos.jpg',
   ];
+// calling in the images saved to the public folder from my pc

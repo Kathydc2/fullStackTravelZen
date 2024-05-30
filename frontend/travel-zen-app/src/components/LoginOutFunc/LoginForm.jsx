@@ -18,9 +18,11 @@ export default function LoginForm({setUser}) {
         try {
             const response = await fetch('http://localhost:3000/api/auth/login', {
                 method: 'POST',
+                //indicates the body will b Json
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                //the req contains email and password
                 body: JSON.stringify({
                     email: email,
                     password: password
@@ -29,8 +31,11 @@ export default function LoginForm({setUser}) {
             const user = await response.json();
             if (response.ok) {
                 alert("Login Successful");
+                // to update state with logged in user
                 setUser(user);
+                //redirect the user to the homepage
                 navigate('/');
+                //log user to the console
                 console.log(user); 
             } else {
                 alert('error with login credentials');

@@ -6,10 +6,11 @@ import ReviewApi from '../../utils/ReviewApi';
 import {  useState, createContext } from 'react';
 import Services from '../../components/Services/Services';
 
-
+// creating a context to wrap reviewsAPI and removeReview in , I wanted to implement as many hooks 
 export const ReviewsContext = createContext();
 
 export default function Home({user, setUser}) {
+  // user and setuser is being passed down from app.jsx
   const [reviews, setReviews] = useState([]);
   
 
@@ -46,9 +47,11 @@ export default function Home({user, setUser}) {
           </div>
           
         </div>
+        {/* carousel is being rendered here */}
         <Carousel/> 
       </div>
       <Services/>
+      {/* wrapping it in the ReviewsContext.provider and passing down the states being used */}
       <ReviewsContext.Provider value={{reviews, setReviews, createReviewForm, setCreateReviewForm, updateReviewForm, setUpdateReviewForm}}>
         <ReviewApi/>
         <RemoveReview user={user} setUser={setUser} />

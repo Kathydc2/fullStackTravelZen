@@ -7,7 +7,7 @@ import { useContext } from 'react';
 
 export default function ReviewApi() {
   const { setReviews} = useContext(ReviewsContext);
-
+  // fetching all reviews
   const fetchReviews = async () => {
     const response = await axios.get("http://localhost:3000/reviews");
     const info = await response.data;

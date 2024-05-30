@@ -4,9 +4,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-
-
 export default function RegisterForm() {
+
+    //current state, setter function to update state
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,12 +20,14 @@ export default function RegisterForm() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                //contains the Json stringified data 
                 body: JSON.stringify({
                     username: username,
                     email: email,
                     password: password
                 })
             });
+            //parses the Json data
             const data = await response.json();
             if (response.ok) {
                 alert("Registration Successful");
@@ -51,6 +53,7 @@ export default function RegisterForm() {
             type="text" 
             value={username} 
             placeholder='Username'
+            //updates the state with corresponding state variables 
             onChange={(e) => setUsername(e.target.value)} 
             required 
         />
