@@ -19,7 +19,6 @@ export default function Home({user, setUser}) {
   });
   
   const [updateReviewForm, setUpdateReviewForm] = useState({
-    _id: null,
     name: "",
     description: "",
   });

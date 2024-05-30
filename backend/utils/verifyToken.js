@@ -7,11 +7,11 @@ const verifyToken = (req, res, next) => {
     if (!token) {
         return res.sendStatus(401)
      }
-     jwt.verify(token, process.env.JWT_SECRET_KEY, (error, user) => {
+     jwt.verify(token, process.env.JWT_SECRET_KEY, (error, decoded) => {
         if (error) {
            return res.sendStatus(401)
         }
-        req.user = user
+        req.userId = decoded.id
         next()
      });
   };

@@ -4,7 +4,7 @@ const {fetchAllUsers, fetchUser, updateUser, deleteUser} = require("../controlle
 
 const router = express.Router();
 
-//------------------------------------------[GET all user - READ]
+//------------------------------------------[GET all users - READ]
 router.get("/", fetchAllUsers);
 //------------------------------------------[GET specific user by ID - READ]
 router.get("/:id", fetchUser);

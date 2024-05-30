@@ -1,59 +1,56 @@
 import React from 'react';
 import axios from 'axios'
 import { ReviewsContext } from '../../pages/Home/Home';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './UpdateReview.css'
 
 export default function UpdateReview({user}) {
-  const { reviews, setReviews, updateReviewForm, setUpdateReviewForm, createReviewForm, setCreateReviewForm} = useContext(ReviewsContext);
+  const { reviews, setReviews, updateReviewForm, setUpdateReviewForm} = useContext(ReviewsContext);
+  const [updateReview, setUpdateReview] = useState(false);
 
   useEffect(() => {
-   
-    setCreateReviewForm(prevForm => ({
+    setUpdateReviewForm(prevForm => ({
       ...prevForm,
       user: user._id
     }));
-  }, [user._id, setCreateReviewForm]);
+  }, [user._id, setUpdateReviewForm]);
 
-  
-  const updateReview = async (e) => {
+
+  const editReview = async (e) => {
     e.preventDefault();
-    const { name, description, user } = updateReviewForm;
 
-    const reviewIndex = reviews.findIndex((review) => review._id === _id);
-
-    if (reviewIndex === -1 || reviews[reviewIndex].userId !== user._id) {
-      alert("Cannot update this review");
+    if (!user._id) {
+      alert("Login to leave feedback!");
       return;
     }
+    
+    const reviewData = {
+      ...updateReviewForm,
+      user: user._id,
+    };
 
     try {
-      const res = await axios.put(
-        `http://localhost:3000/reviews/${_id}`,
-        { name, description, userId: user._id },
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`
-          }
-        }
-      );
+      const res = await axios.put(`http://localhost:3000/reviews/${updateReviewForm._id}`, reviewData);
+      console.log("Response:", res);
 
-      console.log(res);
+      const updatedReview = res.data.review;
+      console.log("updatedReview:", updatedReview);
+ 
+      setReviews((prevReviews) => prevReviews.map(review => 
+        review._id === updateReviewForm._id ? res.data.review : review
+      ));
 
-      const newReviews = [...reviews];
-      newReviews[reviewIndex] = res.data.review;
-      setReviews(newReviews);
-
-      // Reset the form
       setUpdateReviewForm({
-        _id: null,
+        _id: updateReviewForm._id,
         name: "",
         description: "",
       });
+      setUpdateReview(true);
     } catch (error) {
       console.error(error);
+      alert("failed to post");
     }
-  };;
+  };
 
   const handleUpdateFieldChange = (e) => {
     const { value, name } = e.target;
@@ -70,7 +67,7 @@ export default function UpdateReview({user}) {
         <>
           <div className="formAdmin">
             <h2>Edit Feedback</h2>
-            <form onSubmit={updateReview}>
+            <form onSubmit={editReview}>
               <input className='updateInput'
                 name="name"
                 value={updateReviewForm.name}

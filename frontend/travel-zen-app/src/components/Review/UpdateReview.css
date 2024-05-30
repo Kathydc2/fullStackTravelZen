@@ -1,6 +1,6 @@
 .updateReview{
     /* border:solid red; */
-    width:20vw;
+    width:10vw;
     text-align: center;
 }
 .updateBtn{
@@ -13,9 +13,10 @@
 .updateInput{
     border-radius: 5px;
     margin-top: 1%;
+    margin-bottom: 8%;
 }
 .updateText{
-    margin: 2em;
+    margin-bottom: 3%;
     border-radius: 5px;
 
 }

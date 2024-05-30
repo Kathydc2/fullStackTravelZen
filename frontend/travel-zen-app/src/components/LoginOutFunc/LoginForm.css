@@ -12,8 +12,6 @@
     height:42vh;
     width:auto;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    
-
 }
 .loginLogo{
     height:12vh;
@@ -69,10 +67,16 @@
     color: white;
 }
 
-
-
 .register{
     margin-left: 5.4em;
     margin-top: 2em;
    
+}
+.logoutBtn{
+    width: 20%;
+    margin-left: 76%;
+    margin-top: 1%;
+    border-radius: 5px ;
+    background-color:rgb(19, 47, 173);
+    color: white;
 }

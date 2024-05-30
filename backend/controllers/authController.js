@@ -14,7 +14,7 @@ const register = async (req, res) => {
             password: hash,
         });
         console.log("User Created", newUser);
-        res.status(200).json({ message: "Successfully created!" });
+        res.status(200).json({ message: "Successful" });
     } catch (error) {
         console.log(error)
     }
@@ -48,7 +48,7 @@ const login = async (req, res ) => {
             expires: token.expiresIn,
             sameSite: "lax"
         });
-        res.status(200).json({ message: "Login successful!", token,issuedAtDate,exp: expString, _id: user._id});
+        res.status(200).json({ message: "Login successful", token,issuedAtDate,exp: expString, _id: user._id});
 
 
     }catch(error){

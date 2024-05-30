@@ -6,7 +6,7 @@ import './PostReview.css'
 
 
 export default function PostReview({user}) {
-  const { setReviews, createReviewForm, setCreateReviewForm } = useContext(ReviewsContext);
+  const { setReviews ,createReviewForm, setCreateReviewForm} = useContext(ReviewsContext);
   const [createdReview, setCreatedReview] = useState(false);
 
 
@@ -14,12 +14,12 @@ export default function PostReview({user}) {
     e.preventDefault();
 
     if (!user._id) {
-      alert("Log in to leave feedback!");
+      alert("Login to leave feedback!");
       return;
     }
 
     if (createdReview) {
-      alert("Please edit your existing rfeedback");
+      alert("Please edit your existing feedback");
       return;
     }
 

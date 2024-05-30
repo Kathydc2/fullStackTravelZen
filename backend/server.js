@@ -8,8 +8,6 @@ const usersRouter = require("./routes/users");
 const reviewsRouter = require("./routes/reviews");
 
 
-
-
 //------------------------------------------[Requirements/Middleware]
 app.use(express.urlencoded({ extended: true }));
 const cors = require("cors");

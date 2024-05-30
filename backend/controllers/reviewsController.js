@@ -24,21 +24,19 @@ const createReview = async (req, res) => {
 
 const updateReview = async (req, res) => {
     const reviewId = req.params.id;
-    const {name,description} = req.body
+    const {userId,name,description} = req.body
     const review = await Review.findByIdAndUpdate(reviewId,{
         userId: userId,
         name: name,
         description: description
-    });
-    const updatedReview = await Review.findById(reviewId)
-    res.json({review: updatedReview}) 
+    }, { new: true });
+    res.json({review: review});
+
 };
 
 const deleteReview = async (req, res) => {
     const reviewId = req.params.id;
     await Review.findByIdAndDelete(reviewId);
-    const userId = req.params.id;
-    await Review.findByIdAndDelete({userId});
     res.json({success: "User has been deleted successfully"});
 };
 
