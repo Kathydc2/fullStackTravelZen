@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-//Connect to the MongoDB database
+//Connect to the MongoDB database//
 const mongoose = require("mongoose");
 
 const connectToDb = async() => {
